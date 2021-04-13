@@ -1,0 +1,66 @@
+.App {
+  text-align: center;
+  font-family: Nunito;
+}
+
+$hover-color: deepskyblue;
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background-color: rgb(253, 255, 255);
+  color: black;
+  border-color: black;
+  border-style: dashed;
+}
+
+.nav-links {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+
+  a {
+    text-decoration: none;
+
+    li {
+      font-weight: bold;
+      color: black;
+      font-size: x-large;
+      text-decoration: none;
+    }
+  }
+
+  a:hover {
+    li {
+      color: $hover-color;
+    }
+  }
+}
+
+.nav-home {
+  text-decoration: none;
+  list-style: none;
+  font-weight: bolder;
+  color: black;
+  font-size: x-large;
+  align-self: flex-start;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.nav-home :hover {
+  color: $hover-color;
+}
+
+//image
+.image-holder {
+  max-height: 200px;
+  max-width: 200px;
+  border-radius: 50%;
+}
