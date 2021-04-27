@@ -4,18 +4,28 @@ import { Link } from 'react-router-dom';
 
 function Nav() {
     return (
-        <nav>
-            <ul className="nav-links">
-                <Link to="/social" className="">
-                    <li>Socials</li>
-                </Link>
-                <Link to="/" className="nav-home">
-                    <h3>🎓AllofAKind</h3>
-                </Link>
-                <Link to="/about" className="">
-                    <li>About Me</li>
-                </Link>
-            </ul>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="collapse navbar-collapse d-flex justify-content-center">
+                <ul class="navbar-nav">
+                    <Link to="/social" className="">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Socials <span class="sr-only">(current)</span></a>
+                        </li>
+                    </Link>
+
+                    <Link to="/" className="">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">🎓AllofAKind <span class="sr-only">(current)</span></a>
+                        </li>
+                    </Link>
+
+                    <Link to="/about" className="">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About Me <span class="sr-only">(current)</span></a>
+                        </li>
+                    </Link>
+                </ul>
+            </div>
         </nav>
     );
 }
