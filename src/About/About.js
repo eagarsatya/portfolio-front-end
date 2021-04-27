@@ -4,13 +4,14 @@ import '../App.scss';
 function About() {
     return (
         <div>
+            <h1>Hi Everyone!</h1>
             <div>
-                <h1>Hi Everyone!</h1>
-            Thank you for coming to my Web Portfolio
+                <img src="./profile.jpg" alt="my-self" className="image-holder"></img>
+                <h2>Thomas More "Eagar Satya"</h2>
+            </div>
 
             <div>
-                    <img src="./profile.jpg" alt="my-self" className="image-holder"></img>
-                </div>
+                <b><u>Web Developer👨‍💻</u></b> and currently working for <b><u>PT. Accelist Lentera Indonesia</u></b>
             </div>
         </div>
     );

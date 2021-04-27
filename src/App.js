@@ -29,6 +29,7 @@ import Socials from './Socials/Social';
 import About from './About/About';
 import Home from './Home/Home';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
