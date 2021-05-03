@@ -1,5 +1,6 @@
 import React from 'react';
 import '../App.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function About() {
     return (
@@ -12,6 +13,29 @@ function About() {
 
             <div>
                 <b><u>Web Developer👨‍💻</u></b> and currently working for <b><u>PT. Accelist Lentera Indonesia</u></b>
+            </div>
+
+            <div>
+                <div className="row mt-2">
+                    <div className="col-md-6">
+                        Strength
+                    </div>
+                    <div className="col-md-6">
+                        Weakness
+                    </div>
+                </div>
+
+                <div className="row mt-2">
+                    <div className="col-md-6">
+                        Proficient At
+                        <div>
+                            <FontAwesomeIcon icon={["fab", "github"]} size="6x"/>
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        Currently Learning
+                    </div>
+                </div>
             </div>
         </div>
     );

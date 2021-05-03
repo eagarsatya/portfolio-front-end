@@ -29,7 +29,12 @@ import Socials from './Socials/Social';
 import About from './About/About';
 import Home from './Home/Home';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-// import 'bootstrap/dist/css/bootstrap.min.css';
+
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons';
+
+library.add(fab, faCheckSquare, faCoffee);
 
 function App() {
   return (
