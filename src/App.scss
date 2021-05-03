@@ -27,3 +27,55 @@ nav {
   border-width: thick;
   border-color: $hover-color;
 }
+
+.proficient {
+  background-color: #faae2b;
+  border-radius: 0.25rem;
+  box-shadow: 0.4rem 0.4rem #222;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.learning {
+  background-color: #8bd3dd;
+  border-radius: 0.25rem;
+  box-shadow: 0.4rem 0.4rem #222;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.facebook :hover {
+  color: #1877f2;
+}
+
+.twitter :hover {
+  color: rgb(29, 161, 242);
+}
+
+.github :hover {
+  color: black;
+}
+
+.gitlab :hover {
+  color: #fa7035;
+}
+
+.spotify :hover {
+  color: #1ed760;
+}
+
+.discord :hover {
+  color: #7289da;
+}
+
+.linkedin :hover {
+  color: #0a66c2;
+}
+
+.youtube :hover {
+  color: rgb(255, 0, 0);
+}
+
+.instagram :hover {
+  color: #c72b8a;
+}

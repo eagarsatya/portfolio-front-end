@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function About() {
     return (
-        <div>
+        <div className="container">
             <h1>Hi Everyone!</h1>
             <div>
                 <img src="./profile.jpg" alt="my-self" className="image-holder"></img>
@@ -15,26 +15,25 @@ function About() {
                 <b><u>Web Developer👨‍💻</u></b> and currently working for <b><u>PT. Accelist Lentera Indonesia</u></b>
             </div>
 
-            <div>
-                <div className="row mt-2">
-                    <div className="col-md-6">
-                        Strength
-                    </div>
-                    <div className="col-md-6">
-                        Weakness
-                    </div>
+            <div className="col-md-12 mt-3">
+                <div className="mb-2">
+                    Currently Learning
                 </div>
+                <div className="learning">
+                    <FontAwesomeIcon icon={["fab", "react"]} size="3x" />
+                </div>
+            </div>
 
-                <div className="row mt-2">
-                    <div className="col-md-6">
-                        Proficient At
-                        <div>
-                            <FontAwesomeIcon icon={["fab", "github"]} size="6x"/>
-                        </div>
-                    </div>
-                    <div className="col-md-6">
-                        Currently Learning
-                    </div>
+            <div className="col-md-12 mt-3">
+                <div className="mb-2">
+                    Proficient At
+                </div>
+                <div className="proficient">
+                    <FontAwesomeIcon icon={["fab", "github"]} size="3x" />
+                    <FontAwesomeIcon icon={["fab", "vuejs"]} size="3x" />
+                    <FontAwesomeIcon icon={["fab", "gitlab"]} size="3x" />
+                    <span>.NET</span>
+                    <span> SQL</span>
                 </div>
             </div>
         </div>
