@@ -79,3 +79,39 @@ nav {
 .instagram :hover {
   color: #c72b8a;
 }
+
+.built-socmed:hover~.gitlab {
+  color: #fa7035;
+}
+
+.built-socmed:hover~.spotify {
+  color: #1ed760;
+}
+
+.built-socmed:hover~.github {
+  color: black;
+}
+
+.direct-socmed:hover~.facebook {
+  color: #1877f2;
+}
+
+.direct-socmed:hover~.twitter {
+  color: rgb(29, 161, 242);
+}
+
+.direct-socmed:hover~.discord {
+  color: #7289da;
+}
+
+.direct-socmed:hover~.linkedin {
+  color: #0a66c2;
+}
+
+.direct-socmed:hover~.youtube {
+  color: rgb(255, 0, 0);
+}
+
+.direct-socmed:hover~.instagram {
+  color: #c72b8a;
+}

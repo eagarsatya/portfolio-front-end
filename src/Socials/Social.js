@@ -6,7 +6,13 @@ function Socials() {
         <div className="container">
             <h1>Socials</h1>
 
-            <div className="row">
+            <div className="row mt-2">
+                <div className="built-socmed col-md-12">
+                    <b>Hover me!</b> Some of the social media below has already in to this portofolio site 🎲
+                </div>
+                <div className="direct-socmed col-md-12">
+                    <b>Hover me!</b> Some of them will be directing to the social media platform 👍
+                </div>
                 <div className="col-md-4 facebook">
                     <FontAwesomeIcon icon={["fab", "facebook-square"]} size="10x" />
                 </div>
