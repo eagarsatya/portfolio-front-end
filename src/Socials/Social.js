@@ -6,7 +6,7 @@ function Socials() {
         <div className="container">
             <h1>Socials</h1>
 
-            <div className="row mt-2">
+            <div className="row mt-2 text-dark">
                 <div className="built-socmed col-md-12">
                     <b>Hover me!</b> Some of the social media below has already in to this portofolio site 🎲
                 </div>
@@ -14,10 +14,14 @@ function Socials() {
                     <b>Hover me!</b> Some of them will be directing to the social media platform 👍
                 </div>
                 <div className="col-md-4 facebook">
-                    <FontAwesomeIcon icon={["fab", "facebook-square"]} size="10x" />
+                    <a href="https://facebook.com/eagar.satya" target="_blank">
+                        <FontAwesomeIcon icon={["fab", "facebook-square"]} size="10x" />
+                    </a>
                 </div>
                 <div className="col-md-4 twitter">
-                    <FontAwesomeIcon icon={["fab", "twitter-square"]} size="10x" />
+                    <a href="https://twitter.com/eagarsatya" target="_blank">
+                        <FontAwesomeIcon icon={["fab", "twitter-square"]} size="10x" />
+                    </a>
                 </div>
                 <div className="col-md-4 github">
                     <FontAwesomeIcon icon={["fab", "github-square"]} size="10x" />
@@ -29,16 +33,24 @@ function Socials() {
                     <FontAwesomeIcon icon={["fab", "spotify"]} size="10x" />
                 </div>
                 <div className="col-md-4 discord">
-                    <FontAwesomeIcon icon={["fab", "discord"]} size="10x" />
+                    <a href="https://discord.gg/u7mMmn8Nfb" target="_blank">
+                        <FontAwesomeIcon icon={["fab", "discord"]} size="10x" />
+                    </a>
                 </div>
                 <div className="col-md-4 linkedin">
-                    <FontAwesomeIcon icon={["fab", "linkedin"]} size="10x" />
+                    <a href="https://www.linkedin.com/in/eagarsatya" target="_blank">
+                        <FontAwesomeIcon icon={["fab", "linkedin"]} size="10x" />
+                    </a>
                 </div>
                 <div className="col-md-4 youtube">
-                    <FontAwesomeIcon icon={["fab", "youtube"]} size="10x" />
+                    <a href="https://www.youtube.com/channel/UCyCxqOHhLvjphUfUXr_AW9g" target="_blank">
+                        <FontAwesomeIcon icon={["fab", "youtube"]} size="10x" />
+                    </a>
                 </div>
                 <div className="col-md-4 instagram">
-                    <FontAwesomeIcon icon={["fab", "instagram-square"]} size="10x" />
+                    <a href="https://instagram.com/eagarsatya" target="_blank">
+                        <FontAwesomeIcon icon={["fab", "instagram-square"]} size="10x" />
+                    </a>
                 </div>
             </div>
         </div>
