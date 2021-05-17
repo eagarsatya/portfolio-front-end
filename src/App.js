@@ -26,6 +26,7 @@
 import React from 'react';
 import Nav from './Nav/Nav';
 import Socials from './Socials/Social';
+import Spotify from './Socials/Spotify';
 import About from './About/About';
 import Home from './Home/Home';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -45,6 +46,7 @@ function App() {
           <Route path="/" component={Home} exact />
           <Route path="/social" component={Socials} exact />
           <Route path="/about" component={About} exact />
+          <Route path="/spotify" component={Spotify} exact />
         </Switch>
       </div>
     </Router>

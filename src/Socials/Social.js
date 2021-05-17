@@ -1,5 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom';
 
 function Socials() {
     return (
@@ -30,7 +31,9 @@ function Socials() {
                     <FontAwesomeIcon icon={["fab", "gitlab"]} size="10x" />
                 </div>
                 <div className="col-md-4 spotify">
-                    <FontAwesomeIcon icon={["fab", "spotify"]} size="10x" />
+                    <Link to="/spotify" className="">
+                        <FontAwesomeIcon icon={["fab", "spotify"]} size="10x" />
+                    </Link>
                 </div>
                 <div className="col-md-4 discord">
                     <a href="https://discord.gg/u7mMmn8Nfb" target="_blank">

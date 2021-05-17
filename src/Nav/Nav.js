@@ -9,19 +9,19 @@ function Nav() {
                 <ul className="navbar-nav">
                     <Link to="/social" className="">
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Socials <span className="sr-only">(current)</span></a>
+                            <span className="nav-link">Socials <span className="sr-only">(current)</span></span>
                         </li>
                     </Link>
 
                     <Link to="/" className="">
                         <li className="nav-item">
-                            <a className="nav-link" href="#">🎓AllofAKind <span className="sr-only">(current)</span></a>
+                            <span className="nav-link">🎓AllofAKind <span className="sr-only">(current)</span></span>
                         </li>
                     </Link>
 
                     <Link to="/about" className="">
                         <li className="nav-item">
-                            <a className="nav-link" href="#">About Me <span className="sr-only">(current)</span></a>
+                            <span className="nav-link">About Me <span className="sr-only">(current)</span></span>
                         </li>
                     </Link>
                 </ul>
