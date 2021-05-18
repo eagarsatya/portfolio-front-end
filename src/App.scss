@@ -28,7 +28,7 @@ nav {
   border-color: $hover-color;
 }
 
-.proficient {
+.yellow-background {
   background-color: #faae2b;
   border-radius: 0.25rem;
   box-shadow: 0.4rem 0.4rem #222;
@@ -36,12 +36,17 @@ nav {
   justify-content: space-evenly;
 }
 
-.learning {
+.blue-background {
+  background-color: #8bd3dd;
+}
+
+.blue-style {
   background-color: #8bd3dd;
   border-radius: 0.25rem;
   box-shadow: 0.4rem 0.4rem #222;
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
 }
 
 .facebook :hover {
