@@ -2,6 +2,7 @@ import React from 'react';
 import SpotifyPlaylist from './SpotifyPlaylist';
 
 const clientId = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
+const redirectUri = process.env.REACT_APP_SPOTIFY_REDIRECT_URI;
 
 class Spotify extends React.Component {
 
@@ -17,12 +18,7 @@ class Spotify extends React.Component {
     }
 
     authorizeRequest = () => {
-        console.log("permission to requesting auth");
-        console.log(process.env.REACT_APP_SPOTIFY_CLIENT_ID);
-        console.log(process.env);
-
         let baseUrl = 'https://accounts.spotify.com';
-        let redirectUri = `${window.location.protocol}//${window.location.hostname}:${window.location.port}/spotify`;
         let responseType = 'code';
         let scope = 'playlist-read-private';
         let showDialog = false;

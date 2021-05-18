@@ -1,5 +1,7 @@
 import React from 'react';
 
+const redirectUri = process.env.REACT_APP_SPOTIFY_REDIRECT_URI;
+
 class SpotifyPlaylist extends React.Component {
     constructor(props) {
         super(props);
@@ -39,7 +41,6 @@ class SpotifyPlaylist extends React.Component {
 
     requestToken = async () => {
         let url = 'https://accounts.spotify.com/api/token';
-        let redirectUri = `${window.location.protocol}//${window.location.hostname}:${window.location.port}/spotify`;
 
         let clientId = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
         let clientSecret = process.env.REACT_APP_SPOTIFY_CLIENT_SECRET;
