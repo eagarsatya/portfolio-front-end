@@ -33,10 +33,16 @@ class SpotifyPlaylist extends React.Component {
                 'Authorization': `Bearer ${this.state.token.access_token}`,
             },
         };
-        const response = await fetch(url, requestOptions);
-        let listPlaylist = await response.json();
 
-        this.setState({ listPlaylist: listPlaylist.items });
+        const response = await fetch(url, requestOptions);
+
+        if (response.ok) {
+            let listPlaylist = await response.json();
+            this.setState({ listPlaylist: listPlaylist.items });
+        }
+        else {
+            this.props.invalidCodeHandler();
+        }
     }
 
     requestToken = async () => {
@@ -55,11 +61,15 @@ class SpotifyPlaylist extends React.Component {
             },
             body: `grant_type=authorization_code&code=${this.props.code}&redirect_uri=${redirectUri}`
         };
-        const response = await fetch(url, requestOptions);
-        let data = await response.json();
-        this.setState({
-            token: data
-        })
+        
+        fetch(url, requestOptions).then((response) => {
+            let data = response.json();
+            this.setState({
+                token: data
+            })
+        }).catch(() => {
+            this.props.invalidCodeHandler();
+        });
     }
 
     render() {
@@ -73,7 +83,7 @@ class SpotifyPlaylist extends React.Component {
 
 function ListPlaylist(list) {
     let playlistDom = list.listPlaylist?.map((Q, index) => (
-        <div key={Q.id} className="row mt-4 p-2 blue-style">
+        <div key={Q.id} className="white-background row mt-4 p-2">
             <div className="col-md-3">
                 <img height='100vh' width='100vh' src={Q.images[0]?.url}></img>
             </div>

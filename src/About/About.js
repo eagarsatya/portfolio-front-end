@@ -19,7 +19,7 @@ function About() {
                 <div className="mb-2">
                     Currently Learning
                 </div>
-                <div className="blue-style">
+                <div className="blue-background">
                     <FontAwesomeIcon icon={["fab", "react"]} size="3x" />
                 </div>
             </div>
