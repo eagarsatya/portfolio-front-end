@@ -15,6 +15,13 @@ class Spotify extends React.Component {
         this.state = {
             code: codeAuth,
         }
+
+        this.invalidCodeHandler = this.invalidCodeHandler.bind(this);
+
+    }
+
+    invalidCodeHandler() {
+        window.location.href = redirectUri;
     }
 
     authorizeRequest = () => {
@@ -34,7 +41,7 @@ class Spotify extends React.Component {
         </button>;
         }
         else {
-            renderComponent = <SpotifyPlaylist code={this.state.code}></SpotifyPlaylist>;
+            renderComponent = <SpotifyPlaylist invalidCodeHandler={this.invalidCodeHandler} code={this.state.code}></SpotifyPlaylist>;
         }
 
         return (
