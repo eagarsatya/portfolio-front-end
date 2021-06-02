@@ -61,15 +61,18 @@ class SpotifyPlaylist extends React.Component {
             },
             body: `grant_type=authorization_code&code=${this.props.code}&redirect_uri=${redirectUri}`
         };
-        
-        fetch(url, requestOptions).then((response) => {
-            let data = response.json();
+
+        const response = await fetch(url, requestOptions);
+
+        if (response.ok) {
+            let data = await response.json();
             this.setState({
-                token: data
-            })
-        }).catch(() => {
+                'token': data
+            });
+        }
+        else {
             this.props.invalidCodeHandler();
-        });
+        }
     }
 
     render() {
