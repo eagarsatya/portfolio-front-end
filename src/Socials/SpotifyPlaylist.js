@@ -1,7 +1,8 @@
 import React from 'react';
 
 const redirectUri = process.env.REACT_APP_SPOTIFY_REDIRECT_URI;
-
+const clientId = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
+const clientSecret = process.env.REACT_APP_SPOTIFY_CLIENT_SECRET;
 class SpotifyPlaylist extends React.Component {
     constructor(props) {
         super(props);
@@ -14,6 +15,8 @@ class SpotifyPlaylist extends React.Component {
             },
             listPlaylist: []
         }
+
+        this.requestSongListDetail = this.requestSongListDetail.bind(this);
     }
 
     async componentDidMount() {
@@ -48,9 +51,6 @@ class SpotifyPlaylist extends React.Component {
     requestToken = async () => {
         let url = 'https://accounts.spotify.com/api/token';
 
-        let clientId = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
-        let clientSecret = process.env.REACT_APP_SPOTIFY_CLIENT_SECRET;
-
         let base64 = btoa(`${clientId}:${clientSecret}`);
 
         const requestOptions = {
@@ -75,10 +75,37 @@ class SpotifyPlaylist extends React.Component {
         }
     }
 
+    async requestSongListDetail(index) {
+        let currentPlaylist = this.state.listPlaylist[index];
+        console.log(currentPlaylist);
+
+        //USE THIS : Get a Playlist
+        let url = `https://api.spotify.com/v1/playlists/${currentPlaylist.id}`;
+
+
+        const requestOptions = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${this.state.token.access_token}`,
+            },
+        };
+
+        const response = await fetch(url, requestOptions);
+
+        if (response.ok) {
+            let listPlaylist = await response.json();
+            this.setState({ listPlaylist: listPlaylist.items });
+        }
+        else {
+            this.props.invalidCodeHandler();
+        }
+    }
+
     render() {
         return (
             <div>
-                <ListPlaylist listPlaylist={this.state.listPlaylist}></ListPlaylist>
+                <ListPlaylist listPlaylist={this.state.listPlaylist} detailClick={this.requestSongListDetail}></ListPlaylist>
             </div>
         );
     }
@@ -91,13 +118,15 @@ function ListPlaylist(list) {
                 <img height='100vh' width='100vh' src={Q.images[0]?.url}></img>
             </div>
             <div className="col-md-3">
-                {Q.name}
+                <b>{Q.name}</b>
             </div>
             <div className="col-md-3">
                 {Q.description}
             </div>
             <div>
-                Detail Button
+                <button onClick={() => list.detailClick(index)} className="white-background-button">
+                    Song List 🎶
+                </button>
             </div>
         </div>
     ))
