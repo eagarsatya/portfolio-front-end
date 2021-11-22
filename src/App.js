@@ -43,7 +43,7 @@ function App() {
       <div className="App">
         <Nav />
         <Switch>
-          <Route path="/" component={Home} exact />
+          <Route path="/" component={About} exact />
           <Route path="/social" component={Socials} exact />
           <Route path="/about" component={About} exact />
           <Route path="/spotify" component={Spotify} exact />

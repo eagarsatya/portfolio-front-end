@@ -12,21 +12,22 @@ function About() {
             </div>
 
             <div>
-                <b><u>Web Developer👨‍💻</u></b> and currently working for <b><u>PT. Accelist Lentera Indonesia</u></b>
+                <b><u>Lead Developer👨‍💻</u></b> and currently working for <b><u>PT. Accelist Lentera Indonesia</u></b>
             </div>
 
             <div className="col-md-12 mt-3">
                 <div className="mb-2">
-                    Currently Learning
+                    <h2>Currently Learning</h2>
                 </div>
                 <div className="blue-background">
                     <FontAwesomeIcon icon={["fab", "react"]} size="3x" />
+                    <FontAwesomeIcon icon={["fab", "node"]} size="3x" />
                 </div>
             </div>
 
             <div className="col-md-12 mt-3">
                 <div className="mb-2">
-                    Proficient At
+                    <h2>Proficient At</h2>
                 </div>
                 <div className="yellow-background">
                     <FontAwesomeIcon icon={["fab", "github"]} size="3x" />

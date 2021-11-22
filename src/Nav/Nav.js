@@ -13,15 +13,9 @@ function Nav() {
                         </li>
                     </Link>
 
-                    <Link to="/" className="">
-                        <li className="nav-item">
-                            <span className="nav-link">🎓AllofAKind <span className="sr-only">(current)</span></span>
-                        </li>
-                    </Link>
-
                     <Link to="/about" className="">
                         <li className="nav-item">
-                            <span className="nav-link">About Me <span className="sr-only">(current)</span></span>
+                            <span className="nav-link">🎓AllofAKind (About Me!) <span className="sr-only">(current)</span></span>
                         </li>
                     </Link>
                 </ul>

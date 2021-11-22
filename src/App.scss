@@ -97,6 +97,10 @@ nav {
   color: #c72b8a;
 }
 
+.steam :hover {
+  color: #2a475e;
+}
+
 .built-socmed:hover~.gitlab {
   color: #fa7035;
 }
@@ -131,6 +135,10 @@ nav {
 
 .direct-socmed:hover~.instagram {
   color: #c72b8a;
+}
+
+.direct-socmed:hover~.steam {
+  color: #2a475e;
 }
 
 a {

@@ -55,6 +55,11 @@ function Socials() {
                         <FontAwesomeIcon icon={["fab", "instagram-square"]} size="10x" />
                     </a>
                 </div>
+                <div className="col-md-4 steam">
+                    <a href="https://steamcommunity.com/id/extallofakind/" target="_blank">
+                        <FontAwesomeIcon icon={["fab", "steam-square"]} size="10x" />
+                    </a>
+                </div>
             </div>
         </div>
     );
