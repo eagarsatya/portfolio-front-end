@@ -1,15 +1,22 @@
-import React from 'react';
-import '../App.scss';
+import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+    faReact, 
+    faNodeJs, 
+    faGithub, 
+    faVuejs, 
+    faGitlab 
+} from '@fortawesome/free-brands-svg-icons';
 
 function About() {
     return (
         <div className="container">
             <h1>Hi Everyone!</h1>
             <div>
-                <img src="./profile.jpg" alt="my-self" className="image-holder"></img>
+                <Image src="/profile.jpg" alt="my-self" className="image-holder" width={200} height={200} />
                 <h2>Thomas More "Eagar Satya"</h2>
             </div>
+
 
             <div>
                 <b><u>Lead Developer👨‍💻</u></b> and currently working for <b><u>PT. Accelist Lentera Indonesia</u></b>
@@ -20,8 +27,8 @@ function About() {
                     <h2>Currently Learning</h2>
                 </div>
                 <div className="blue-background">
-                    <FontAwesomeIcon icon={["fab", "react"]} size="3x" />
-                    <FontAwesomeIcon icon={["fab", "node"]} size="3x" />
+                    <FontAwesomeIcon icon={faReact} size="3x" />
+                    <FontAwesomeIcon icon={faNodeJs} size="3x" />
                 </div>
             </div>
 
@@ -30,9 +37,9 @@ function About() {
                     <h2>Proficient At</h2>
                 </div>
                 <div className="yellow-background">
-                    <FontAwesomeIcon icon={["fab", "github"]} size="3x" />
-                    <FontAwesomeIcon icon={["fab", "vuejs"]} size="3x" />
-                    <FontAwesomeIcon icon={["fab", "gitlab"]} size="3x" />
+                    <FontAwesomeIcon icon={faGithub} size="3x" />
+                    <FontAwesomeIcon icon={faVuejs} size="3x" />
+                    <FontAwesomeIcon icon={faGitlab} size="3x" />
                     <span>.NET</span>
                     <span> SQL</span>
                 </div>
