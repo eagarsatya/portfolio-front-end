@@ -1,6 +1,9 @@
 import './globals.scss';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+import { config, library } from '@fortawesome/fontawesome-svg-core';
+config.autoAddCss = false;
+
 import Nav from '../components/Nav';
-import { library } from '@fortawesome/fontawesome-svg-core';
 import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 library.add(faCheckSquare, faCoffee);
