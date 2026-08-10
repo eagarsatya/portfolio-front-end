@@ -1,3 +1,5 @@
+import 'server-only';
+
 export type Project = {
   name: string;
   title: string;

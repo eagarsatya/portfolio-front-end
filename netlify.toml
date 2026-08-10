@@ -2,5 +2,9 @@
   command = "npm run build"
   publish = ".next"
 
+[build.environment]
+  # Token can appear in Turbopack/Next build cache; those files are not published.
+  SECRETS_SCAN_OMIT_PATHS = ".next/cache/**,.netlify/.next/cache/**"
+
 [[plugins]]
   package = "@netlify/plugin-nextjs"
