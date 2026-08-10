@@ -46,7 +46,7 @@ function Socials() {
 
           const content = (
             <>
-              <FontAwesomeIcon icon={icon} className="h-10 w-10" />
+              <FontAwesomeIcon icon={icon} className="h-20 w-20" />
               <span className="text-xs font-medium text-neutral-600">
                 {social.name}
               </span>

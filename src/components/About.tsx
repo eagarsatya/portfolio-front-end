@@ -7,9 +7,15 @@ import {
   faVuejs,
   faGitlab,
 } from '@fortawesome/free-brands-svg-icons';
-import { faDatabase, faCode } from '@fortawesome/free-solid-svg-icons';
+import {
+  faDatabase,
+  faCode,
+  faMemory,
+  faStream,
+  faSearch,
+} from '@fortawesome/free-solid-svg-icons';
 import type { IconDefinition } from '@fortawesome/fontawesome-svg-core';
-import { skillGroups } from '../data/skills';
+import { skills } from '../data/skills';
 
 const iconMap: Record<string, IconDefinition> = {
   react: faReact,
@@ -19,6 +25,11 @@ const iconMap: Record<string, IconDefinition> = {
   gitlab: faGitlab,
   dotnet: faCode,
   sql: faDatabase,
+  nextjs: faCode,
+  postgresql: faDatabase,
+  redis: faMemory,
+  kafka: faStream,
+  typesense: faSearch,
 };
 
 function About() {
@@ -48,40 +59,41 @@ function About() {
             . I care about clear code, solid systems, and shipping work that
             lasts.
           </p>
+          <p className="mt-3 max-w-xl text-base leading-relaxed text-neutral-600">
+            Day to day I lead full-stack delivery — shaping architecture,
+            unblocking the team, and keeping products reliable from backend
+            services through the UI.
+          </p>
         </div>
       </section>
 
-      {skillGroups.map((group) => (
-        <section key={group.title}>
-          <h2 className="text-xl font-semibold tracking-tight text-neutral-900">
-            {group.title}
-          </h2>
-          <p className="mt-1 text-sm text-neutral-500">
-            {group.title === 'Currently Learning'
-              ? 'Tools and stacks I am actively leveling up.'
-              : 'Technologies I use day to day with confidence.'}
-          </p>
-          <ul className="mt-5 flex flex-wrap gap-2">
-            {group.skills.map((skill) => {
-              const icon = skill.icon ? iconMap[skill.icon] : null;
-              return (
-                <li
-                  key={skill.name}
-                  className="inline-flex items-center gap-2 rounded-full border border-neutral-200 px-3.5 py-1.5 text-sm text-neutral-700"
-                >
-                  {icon && (
-                    <FontAwesomeIcon
-                      icon={icon}
-                      className="h-4 w-4 text-neutral-500"
-                    />
-                  )}
-                  {skill.name}
-                </li>
-              );
-            })}
-          </ul>
-        </section>
-      ))}
+      <section>
+        <h2 className="text-xl font-semibold tracking-tight text-neutral-900">
+          Stack
+        </h2>
+        <p className="mt-1 text-sm text-neutral-500">
+          Technologies I use day to day.
+        </p>
+        <ul className="mt-5 flex flex-wrap gap-2">
+          {skills.map((skill) => {
+            const icon = skill.icon ? iconMap[skill.icon] : null;
+            return (
+              <li
+                key={skill.name}
+                className="inline-flex items-center gap-2 rounded-full border border-neutral-200 px-3.5 py-1.5 text-sm text-neutral-700"
+              >
+                {icon && (
+                  <FontAwesomeIcon
+                    icon={icon}
+                    className="h-4 w-4 text-neutral-500"
+                  />
+                )}
+                {skill.name}
+              </li>
+            );
+          })}
+        </ul>
+      </section>
     </div>
   );
 }

@@ -1,9 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { projects } from '../data/projects';
+import { getProjects } from '../lib/github';
 import ProjectCard from './ProjectCard';
 
-function Home() {
+async function Home() {
+  const projects = await getProjects();
   const featured = projects.filter((p) => p.featured);
 
   return (
@@ -25,8 +26,8 @@ function Home() {
             Lead Developer @ PT. Accelist Lentera Indonesia
           </p>
           <p className="mt-4 max-w-xl text-base leading-relaxed text-neutral-600">
-            I build reliable products with clean architecture — from .NET and
-            SQL backends to modern React and Vue front-ends.
+            I build reliable products with clean architecture — clear systems,
+            thoughtful solutions, and work that lasts.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link
@@ -57,11 +58,17 @@ function Home() {
             See all
           </Link>
         </div>
-        <div className="grid gap-4 sm:grid-cols-2">
-          {featured.map((project) => (
-            <ProjectCard key={project.title} project={project} />
-          ))}
-        </div>
+        {featured.length === 0 ? (
+          <p className="text-sm text-neutral-500">
+            Featured projects will appear here once GitHub repos load.
+          </p>
+        ) : (
+          <div className="grid gap-4 sm:grid-cols-2">
+            {featured.map((project) => (
+              <ProjectCard key={project.name} project={project} />
+            ))}
+          </div>
+        )}
       </section>
     </div>
   );
