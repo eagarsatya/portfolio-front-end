@@ -1,80 +1,80 @@
-"use client";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
-import { 
-    faSquareFacebook, 
-    faSquareTwitter, 
-    faSquareGithub, 
-    faGitlab, 
-    faSpotify, 
-    faDiscord, 
-    faLinkedin, 
-    faYoutube, 
-    faSquareInstagram, 
-    faSquareSteam 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faSquareFacebook,
+  faSquareTwitter,
+  faSquareGithub,
+  faGitlab,
+  faSpotify,
+  faDiscord,
+  faLinkedin,
+  faYoutube,
+  faSquareInstagram,
+  faSquareSteam,
 } from '@fortawesome/free-brands-svg-icons';
+import { socials } from '../data/socials';
+
+const iconMap = {
+  facebook: faSquareFacebook,
+  twitter: faSquareTwitter,
+  github: faSquareGithub,
+  gitlab: faGitlab,
+  spotify: faSpotify,
+  discord: faDiscord,
+  linkedin: faLinkedin,
+  youtube: faYoutube,
+  instagram: faSquareInstagram,
+  steam: faSquareSteam,
+};
 
 function Socials() {
-    return (
-        <div className="container">
-            <h1>Socials</h1>
+  return (
+    <div className="space-y-8">
+      <header>
+        <h1 className="text-3xl font-bold tracking-tight text-neutral-900 md:text-4xl">
+          Socials
+        </h1>
+        <p className="mt-2 max-w-xl text-base text-neutral-500">
+          Find me across the web. Icons pick up their brand color on hover.
+        </p>
+      </header>
 
-            <div className="row mt-2 text-dark">
-                <div className="built-socmed col-md-12">
-                    <b>Hover me!</b> Some of the social media below has already in to this portofolio site 🎲
-                </div>
-                <div className="direct-socmed col-md-12">
-                    <b>Hover me!</b> Some of them will be directing to the social media platform 👍
-                </div>
-                <div className="col-md-4 facebook">
-                    <a href="https://facebook.com/eagar.satya" target="_blank" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faSquareFacebook} size="10x" />
-                    </a>
-                </div>
-                <div className="col-md-4 twitter">
-                    <a href="https://twitter.com/eagarsatya" target="_blank" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faSquareTwitter} size="10x" />
-                    </a>
-                </div>
-                <div className="col-md-4 github">
-                    <FontAwesomeIcon icon={faSquareGithub} size="10x" />
-                </div>
-                <div className="col-md-4 gitlab">
-                    <FontAwesomeIcon icon={faGitlab} size="10x" />
-                </div>
-                <div className="col-md-4 spotify">
-                    <Link href="/spotify" className="">
-                        <FontAwesomeIcon icon={faSpotify} size="10x" />
-                    </Link>
-                </div>
-                <div className="col-md-4 discord">
-                    <a href="https://discord.gg/u7mMmn8Nfb" target="_blank" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faDiscord} size="10x" />
-                    </a>
-                </div>
-                <div className="col-md-4 linkedin">
-                    <a href="https://www.linkedin.com/in/eagarsatya" target="_blank" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faLinkedin} size="10x" />
-                    </a>
-                </div>
-                <div className="col-md-4 youtube">
-                    <a href="https://www.youtube.com/channel/UCyCxqOHhLvjphUfUXr_AW9g" target="_blank" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faYoutube} size="10x" />
-                    </a>
-                </div>
-                <div className="col-md-4 instagram">
-                    <a href="https://instagram.com/eagarsatya" target="_blank" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faSquareInstagram} size="10x" />
-                    </a>
-                </div>
-                <div className="col-md-4 steam">
-                    <a href="https://steamcommunity.com/id/extallofakind/" target="_blank" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faSquareSteam} size="10x" />
-                    </a>
-                </div>
-            </div>
-        </div>
-    );
+      <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-5">
+        {socials.map((social) => {
+          const icon = iconMap[social.icon];
+          const className = `flex flex-col items-center gap-3 rounded-lg border border-neutral-200 p-5 text-neutral-400 transition-colors hover:border-neutral-400 ${social.className}`;
+
+          const content = (
+            <>
+              <FontAwesomeIcon icon={icon} className="h-10 w-10" />
+              <span className="text-xs font-medium text-neutral-600">
+                {social.name}
+              </span>
+            </>
+          );
+
+          return (
+            <li key={social.name}>
+              {social.external ? (
+                <a
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={className}
+                >
+                  {content}
+                </a>
+              ) : (
+                <Link href={social.href} className={className}>
+                  {content}
+                </Link>
+              )}
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
 }
 
 export default Socials;

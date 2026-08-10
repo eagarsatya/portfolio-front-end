@@ -1,32 +1,43 @@
-import './globals.scss';
+import './globals.css';
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import { config } from '@fortawesome/fontawesome-svg-core';
+import '@fortawesome/fontawesome-svg-core/styles.css';
 import Nav from '../components/Nav';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons';
+import Footer from '../components/Footer';
 
-library.add(faCheckSquare, faCoffee);
+config.autoAddCss = false;
 
-export const metadata = {
-  title: 'AllofAKind',
-  description: 'Eagar Portfolio',
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+});
+
+export const metadata: Metadata = {
+  title: {
+    default: 'Eagar Satya — Lead Developer',
+    template: '%s · Eagar Satya',
+  },
+  description:
+    'Portfolio of Eagar Satya — Lead Developer at PT. Accelist Lentera Indonesia. Stacks, skills, and projects.',
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.className}>
       <head>
         <link rel="icon" href="/logo.png" />
-        <link 
-          rel="stylesheet" 
-          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
-          crossOrigin="anonymous"
-        />
       </head>
-      <body>
-        <div className="App">
-          <Nav />
+      <body className="flex min-h-screen flex-col bg-white text-neutral-900">
+        <Nav />
+        <main className="mx-auto w-full max-w-3xl flex-1 px-6 py-12 md:py-16">
           {children}
-        </div>
+        </main>
+        <Footer />
       </body>
     </html>
   );
