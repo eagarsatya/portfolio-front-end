@@ -1,0 +1,48 @@
+@import 'tailwindcss';
+
+@layer base {
+  body {
+    @apply bg-white text-neutral-900 antialiased;
+  }
+}
+
+/* Social icon brand-color hovers */
+.social-facebook:hover {
+  color: #1877f2;
+}
+
+.social-twitter:hover {
+  color: rgb(29, 161, 242);
+}
+
+.social-github:hover {
+  color: #171717;
+}
+
+.social-gitlab:hover {
+  color: #fa7035;
+}
+
+.social-spotify:hover {
+  color: #1ed760;
+}
+
+.social-discord:hover {
+  color: #7289da;
+}
+
+.social-linkedin:hover {
+  color: #0a66c2;
+}
+
+.social-youtube:hover {
+  color: rgb(255, 0, 0);
+}
+
+.social-instagram:hover {
+  color: #c72b8a;
+}
+
+.social-steam:hover {
+  color: #2a475e;
+}
